@@ -45,9 +45,10 @@
 						<input type="date" name="dateput">
 					</p>
 -->					
+					<!-- color is not supported by all browsers -->
 					<p>
-						<label for="color">Color</label>
-						<input type="color" name="color">
+						<label>Color</label>
+						<input type="color">
 					</p>
 					<p>Enter your username and password:</p>
 						<p>
@@ -55,7 +56,6 @@
 							<br>
 							Password: <input type="password" size="30">
 						</p>
-					</p>
 					<p>
 						Tell us your backstory:<br>
 						<textarea name="backstory" rows="5" cols="30">Please enter your story in this field...</textarea>
@@ -107,7 +107,7 @@
 					</p>
 					<p>
 						<label for="meterer">Report:</label>
-						<meter value="8000" min="0" max="13337" name="meterer" id="meterer"></meter>
+						<meter value="8000" min="0" max="13337" id="meterer"></meter>
 					</p>
 					<p>
 						<progress value="6666" max="10000"></progress>
@@ -115,6 +115,7 @@
 					
 					<!-- end triggers -->
 					<section>
+					<h2>Finish the form</h2>
 						<input type="submit" value="Submit form">
 						<br>
 						<input type="reset" value="Clear form">
@@ -123,7 +124,7 @@
 						<!-- <input type="image" src="submit.jpg" alt="Submit button"> -->
 						<br>
 						<button type="submit">
-							<img src="../images/add.jpg" alt="add" width="" height="20">
+							<img src="../images/add.jpg" alt="add" height="20">
 						</button>
 						<br>
 						<input type="hidden" name="bookmark" value="fillervalue">
