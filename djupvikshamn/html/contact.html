@@ -1,18 +1,110 @@
-<!DOCTYPE html>
-
-<html>
+<html lang="sv">
 	<head>
-		<title>TITLE</title>
-		<meta charset = "UTF-8" />
+		<title>Djupviks Hamn - Kontakt</title>
+		<meta charset="UTF-8" />
 	</head>
 
 	<body>
+
+		<!-- page header -->
+		<header>
+			<!-- index page for djupviks hamn -->
+			<h1>Djupvik</h1>
+
+			<!-- header image -->
+			<img src="../images/layout/header.png" width="1900" 
+			alt="Sidans rubrikbild, vy över havet vid solnedgång"/>
+
+			<!-- site navigation -->
+			<nav>
+				<a href="./html/contact.html">Kontakt</a>
+				<a href="./html/English.html">English</a>
+				<a href="./html/guest.html">Guest</a>
+				<a href="./html/history.html">History</a>
+				<a href="./html/info.html">Info</a>
+				<a href="./html/members.html">Members</a>
+			</nav>
+
+		</header>
+		
+		<!-- form for contact -->
 		<section>
-			<!-- Comment for H1 -->
-			<h1>H1</h1>
-			<h2>H2</h2>
-			<!-- a comment for a subitem -->
-				<a href="./about/me.html">Me</a>
+			<h2>Kontakta oss:</h2>
+				<!-- placeholder action until it can be properly added at a later stage -->
+				<form action="/join.php" method="post">
+
+					<!-- request title -->
+					<p>
+						<label for="rubrik">Ärenderubrik:</label>
+						<input type="text" name="rubrik" id="rubrik" 
+						size="35" required placeholder="Skäl till att du kontaktar oss">
+					</p>
+
+					<!-- description of the request -->
+					<p>
+						<!-- Not sure if a label is the best way to clarify this
+						 field as there is a nice placeholder text. 
+						 commented out for now -->
+						<!-- <label for="description">Beskrivning:</label> -->
+						<textarea name="beskrivning" rows="5" cols="30">Beskrivning av ditt ärende</textarea>
+					</p>
+
+					<!-- area for which the request applies -->
+					<p>
+						<select name="omrade" size="4">
+						<optgroup label="Vilket område gäller ärendet?">
+							<option value="batplats">Båtplats</option>
+							<option value="medlem">Medlem</option>
+							<option value="ovrigt">Övrigt</option>
+						</optgroup>
+						</select>
+					</p>
+
+					<!-- how the requester wants to be contaacted -->
+					<p>
+						<fieldset>
+							Hur vill du bli kontaktad?
+							<input type="radio" name="perMail" value="perMail" id="perMail">
+							<label for="perMail">Mail</label>
+
+							<input type="radio" name="perTelefon" value="perTelefon" id="perTelefon">
+							<label for="perTelefon">Telefon</label>
+
+							<input type="radio" name="noContact" value="noContact" id="noContact">
+							<label for="noContact">Jag vill inte bli kontaktad</label>
+						</fieldset>
+					</p>
+
+					<!-- telephone number if the user wants to be contacted by phone-->
+					<p>
+						<label for="teleNummer">Telefonnummer:</label>
+						<input type="tel" name="teleNummer" id="teleNummer" size="14" placeholder="Telefonnummer">
+					</p>
+
+					<!-- mail address if the user wants to be contacted via it -->
+					<p>
+						<label for="emailAddress">Email:</label>
+						<input type="email" name="emailAddress" id="emailAddress" 
+						size="35" pattern="\S+@\S+\.\S+" required 
+						placeholder="Email on the form you@domain.top">
+					</p>
+
+					<!-- end triggers -->
+
+					<input type="submit" value="Skicka formulär">
+					<input type="reset" value="Rensa formulär">
+
+				</form>
+
 		</section>
+
+		<!-- page footer -->
+		<footer>
+			<h2>Inte medlem?</h2>
+			<p>
+				Såhär gör du!
+			</p>
+		</footer>
+
 	</body>
 </html>
