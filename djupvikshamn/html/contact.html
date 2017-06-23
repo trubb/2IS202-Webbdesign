@@ -28,6 +28,7 @@
 		</header>
 		
 		<!-- form for contact -->
+		<!-- all fields will need to have their input sanitized when implemented -->
 		<section>
 			<h2>Kontakta oss:</h2>
 				<!-- placeholder action until it can be properly added at a later stage -->
@@ -62,17 +63,16 @@
 
 					<!-- how the requester wants to be contaacted -->
 					<p>
-						<fieldset>
-							Hur vill du bli kontaktad?
-							<input type="radio" name="perMail" value="perMail" id="perMail">
-							<label for="perMail">Mail</label>
+						Hur vill du bli kontaktad?
 
-							<input type="radio" name="perTelefon" value="perTelefon" id="perTelefon">
-							<label for="perTelefon">Telefon</label>
+						<input type="radio" name="kontaktTyp" value="perMail" id="perMail">
+						<label for="perMail">Mail</label>
 
-							<input type="radio" name="noContact" value="noContact" id="noContact">
-							<label for="noContact">Jag vill inte bli kontaktad</label>
-						</fieldset>
+						<input type="radio" name="kontaktTyp" value="perTelefon" id="perTelefon">
+						<label for="perTelefon">Telefon</label>
+
+						<input type="radio" name="kontaktTyp" value="noContact" id="noContact">
+						<label for="noContact">Jag vill inte bli kontaktad</label>
 					</p>
 
 					<!-- telephone number if the user wants to be contacted by phone-->
