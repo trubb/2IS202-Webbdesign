@@ -1,18 +1,123 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="sv">
 	<head>
-		<title>TITLE</title>
-		<meta charset = "UTF-8" />
+		<title>Gästplatser - Djupviks Hamn</title>
+		<meta charset="UTF-8" />
 	</head>
 
 	<body>
-		<section>
-			<!-- Comment for H1 -->
-			<h1>H1</h1>
-			<h2>H2</h2>
-			<!-- a comment for a subitem -->
-				<a href="./about/me.html">Me</a>
+
+		<!-- page header -->
+		<header>
+			<!-- index page for djupviks hamn -->
+			<h1>Djupvik</h1>
+
+			<!-- header image -->
+			<img src="../images/layout/header.png" width="1900" 
+			alt="Sidans rubrikbild, vy över havet vid solnedgång"/>
+
+			<!-- site navigation -->
+			<nav>
+				<a href="../index.html">Start</a>
+				<a href="./info.html">Information</a>
+				<a href="./guest.html">Gästplatser</a>
+				<a href="./history.html">Historia</a>
+				<a href="./contact.html">Kontakt</a>
+				<a href="./members.html">Medlemsinfo</a>
+				<a href="./english.html">In English</a>
+			</nav>
+
+		</header>
+
+		<!-- information about mooring spots for guests -->
+		<section id="gastPlatsInfo">
+			<h2>Information för besökande angående båtplatser</h2>
+				<p>
+					Gästbåtar är hjärtligt välkomna! Ring gärna hamnfogden för att få reda på aktuellt läge.
+					Dygnshyra 150:-/dygn*
+					El-anslutning 50:-/dygn
+					*inkluderar kort för tillträde till servicehuset och 20:- för två duschar.
+
+					Hamnfogde
+					<!-- consider writing nr in ITU-approved format -->
+					Bo Lautin: Mobil 0707 - 92 03 10
+				</p>
+
 		</section>
+
+		<section id="vaderInfo">
+			<h2>Väder</h2>
+
+				<!-- todays weather -->
+				<section id="vaderIdag">
+					<h3>I dag</h3>
+
+						<table>
+							<tr>
+								<th>KL</th>
+								<th>Temp</th>
+								<th>Vind</th>
+								<th>Himmel</th>
+							</tr>
+							<tr>
+								<td>12</td>
+								<td>15</td>
+								<td>&uarr; (6)</td>
+								<td>Nearly clear sky</td>
+							</tr>
+							<tr>
+								<td>18</td>
+								<td>16</td>
+								<td>&uarr; (5)</td>
+								<td>Nearly clear sky</td>
+							</tr>
+						</table>
+
+				</section>
+
+				<!-- tomorrows weather -->
+				<section id="vaderImorgon">
+					<h3>I morgon</h3>
+
+						<table>
+							<tr>
+								<th>KL</th>
+								<th>Temp</th>
+								<th>Vind</th>
+								<th>Himmel</th>
+							</tr>
+							<tr>
+								<td>6</td>
+								<td>13</td>
+								<td>&larr; (2)</td>
+								<td>Nearly clear sky</td>
+							</tr>
+							<tr>
+								<td>12</td>
+								<td>15</td>
+								<td>&rarr; (6)</td>
+								<td>Nearly clear sky</td>
+							</tr>
+							<tr>
+								<td>18</td>
+								<td>16</td>
+								<td>&rarr; (5)</td>
+								<td>Nearly clear sky</td>
+							</tr>
+						</table>
+
+				</section>
+
+		</section>
+
+		<!-- page footer -->
+		<footer>
+			<h2>Not a member?</h2>
+			<p>
+				Become one today!
+			</p>
+		</footer>
+
 	</body>
 </html>
