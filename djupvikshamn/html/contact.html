@@ -24,7 +24,7 @@
 				<a href="./guest.html">Gästplatser</a>
 				<a href="./history.html">Historia</a>
 				<a href="./contact.html">Kontakt</a>
-				<a href="./members.html">Medlem</a>
+				<a href="./members.html">Medlemsinfo</a>
 				<a href="./english.html">In English</a>
 			</nav>
 
@@ -36,67 +36,66 @@
 			<h2>Kontakta oss:</h2>
 				<!-- placeholder action until it can be properly added at a later stage -->
 				<form action="/join.php" method="post">
+					<fieldset>
+						<!-- request title -->
+						<p>
+							<label for="rubrik">Ärenderubrik:</label>
+							<input type="text" name="rubrik" id="rubrik" 
+							size="35" placeholder="Skäl till att du kontaktar oss" />
+						</p>
 
-					<!-- request title -->
-					<p>
-						<label for="rubrik">Ärenderubrik:</label>
-						<input type="text" name="rubrik" id="rubrik" 
-						size="35" required placeholder="Skäl till att du kontaktar oss">
-					</p>
+						<!-- description of the request -->
+						<p>
+							<!-- Not sure if a label is the best way to clarify this
+							 field as there is a nice placeholder text. 
+							 commented out for now -->
+							<!-- <label for="description">Beskrivning:</label> -->
+							<textarea name="beskrivning" rows="5" cols="30">Beskrivning av ditt ärende</textarea>
+						</p>
 
-					<!-- description of the request -->
-					<p>
-						<!-- Not sure if a label is the best way to clarify this
-						 field as there is a nice placeholder text. 
-						 commented out for now -->
-						<!-- <label for="description">Beskrivning:</label> -->
-						<textarea name="beskrivning" rows="5" cols="30">Beskrivning av ditt ärende</textarea>
-					</p>
+						<!-- area for which the request applies -->
+						<p>
+							<select name="omrade" size="4">
+							<optgroup label="Vilket område gäller ärendet?">
+								<option value="batplats">Båtplats</option>
+								<option value="medlem">Medlem</option>
+								<option value="ovrigt">Övrigt</option>
+							</optgroup>
+							</select>
+						</p>
 
-					<!-- area for which the request applies -->
-					<p>
-						<select name="omrade" size="4">
-						<optgroup label="Vilket område gäller ärendet?">
-							<option value="batplats">Båtplats</option>
-							<option value="medlem">Medlem</option>
-							<option value="ovrigt">Övrigt</option>
-						</optgroup>
-						</select>
-					</p>
+						<!-- how the requester wants to be contaacted -->
+						<p>
+							Hur vill du bli kontaktad?
 
-					<!-- how the requester wants to be contaacted -->
-					<p>
-						Hur vill du bli kontaktad?
+							<input type="radio" name="kontaktTyp" value="perMail" id="perMail" />
+							<label for="perMail">Mail</label>
 
-						<input type="radio" name="kontaktTyp" value="perMail" id="perMail">
-						<label for="perMail">Mail</label>
+							<input type="radio" name="kontaktTyp" value="perTelefon" id="perTelefon" />
+							<label for="perTelefon">Telefon</label>
 
-						<input type="radio" name="kontaktTyp" value="perTelefon" id="perTelefon">
-						<label for="perTelefon">Telefon</label>
+							<input type="radio" name="kontaktTyp" value="noContact" id="noContact" />
+							<label for="noContact">Jag vill inte bli kontaktad</label>
+						</p>
 
-						<input type="radio" name="kontaktTyp" value="noContact" id="noContact">
-						<label for="noContact">Jag vill inte bli kontaktad</label>
-					</p>
+						<!-- telephone number if the user wants to be contacted by phone-->
+						<p>
+							<label for="teleNummer">Telefonnummer:</label>
+							<input type="tel" name="teleNummer" id="teleNummer" size="14" placeholder="Telefonnummer" />
+						</p>
 
-					<!-- telephone number if the user wants to be contacted by phone-->
-					<p>
-						<label for="teleNummer">Telefonnummer:</label>
-						<input type="tel" name="teleNummer" id="teleNummer" size="14" placeholder="Telefonnummer">
-					</p>
+						<!-- mail address if the user wants to be contacted via it -->
+						<p>
+							<label for="emailAddress">Email:</label>
+							<input type="email" name="emailAddress" id="emailAddress" 
+							size="35" pattern="\S+@\S+\.\S+" placeholder="Email on the form you@domain.top" />
+						</p>
 
-					<!-- mail address if the user wants to be contacted via it -->
-					<p>
-						<label for="emailAddress">Email:</label>
-						<input type="email" name="emailAddress" id="emailAddress" 
-						size="35" pattern="\S+@\S+\.\S+" required 
-						placeholder="Email on the form you@domain.top">
-					</p>
+						<!-- end triggers -->
 
-					<!-- end triggers -->
-
-					<input type="submit" value="Skicka formulär">
-					<input type="reset" value="Rensa formulär">
-
+						<input type="submit" value="Skicka formulär" />
+						<input type="reset" value="Rensa formulär" />
+					</fieldset>
 				</form>
 
 		</section>
