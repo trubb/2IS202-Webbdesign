@@ -1,22 +1,77 @@
 
+/* set background image for page */
 body {
 	background-image: url("../images/layout/body-pattern.jpeg");
 }
 
+/* set font family for headings */
 h1,h2,h3,h4,h5,h6	{
 	font-family: 'Fjalla One', sans-serif;
 	color: #1f1f1f;
 }
 
-section, #indexImages {
+/* set font family for page content */
+p, li, figcaption {
+	font-family: 'Open Sans', sans-serif;
+}
+
+
+#pageHeader {
+	background-color: rgba(255,255,255,0.5);
+	padding-left: 260px;
+	margin-right: 80%;
+}
+
+#headerImage {
+	width: 100%;
+}
+
+footer {
+	background-color: #FFF;
+	border-top: 4px solid #CDC9C5;
+}
+
+#content, #images {
 	background-color: #FFF;
 	border-top-style: solid;
 	border-width: 5px;
 	border-top-color: #FF9933;
-	padding-left: 5px;
+	padding-left: 10px;
+	margin-left: 5%;
+	margin-right: 5%;
 }
 
-p, li, figcaption {
-	font-family: 'Open Sans', sans-serif;
+/* style navbar */
+#nav {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: #FFF;
+	text-align: center;
+}
+
+#nav li {
+	float: left;
+}
+
+#nav li a {
+	display: inline-block;
+	color: #1f1f1f;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	border-top: 4px solid #FFF;
+	border-bottom: 4px solid #FFF;
+}
+
+/* Change the link color to #CDC9C5 on hover */
+#nav li a:hover {
+	background-color: #CDC9C5;
+	border-bottom-color: #CDC9C5;
+}
+
+#nav li a.active {
+	border-bottom: 4px solid #CDC9C5;
 }
 
