@@ -5,50 +5,43 @@ body {
 }
 
 /* set font family for headings */
-h1,h2,h3,h4,h5,h6	{
+h1,h2,h3,h4,h5,h6 {
 	font-family: 'Fjalla One', sans-serif;
 	color: #1f1f1f;
 }
 
 /* set font family for page content */
-p, li, figcaption {
+p, li, figcaption, time {
 	font-family: 'Open Sans', sans-serif;
 }
 
+h1 {
+	position: absolute;
+	top: 50px;
+	left: 0;
+	width: 100%;
+}
 
-#pageHeader {
+h1 span {
+	letter-spacing: -1px;
+	background-color: rgb(255,255,255);
 	background-color: rgba(255,255,255,0.5);
-	padding-left: 260px;
-	margin-right: 80%;
+	padding-right: 20px;
+	padding-left: 200px;
 }
 
 #headerImage {
+	position: relative;
 	width: 100%;
-}
-
-footer {
-	background-color: #FFF;
-	border-top: 4px solid #CDC9C5;
-	margin: auto;
-	width: 100%;
-	height: 80px;
-	text-align: center;
-}
-
-#content, #images {
-	background-color: #FFF;
-	border-top-style: solid;
-	border-width: 5px;
-	border-top-color: #FF9933;
-	padding-left: 10px;
-	margin-left: 5%;
-	margin-right: 5%;
+	height: 250px;
 }
 
 /* style navbar */
 #nav {
 	list-style-type: none;
 	margin: 0;
+	margin-top: -5px;
+	margin-bottom: 10px;
 	padding: 0;
 	overflow: hidden;
 	background-color: #FFF;
@@ -56,16 +49,15 @@ footer {
 }
 
 #nav li {
-	float: left;
+	display: inline;
 }
 
 #nav li a {
 	display: inline-block;
 	color: #1f1f1f;
 	text-align: center;
-	padding: 14px 16px;
+	padding: 10px 80px;
 	text-decoration: none;
-	border-top: 4px solid #FFF;
 	border-bottom: 4px solid #FFF;
 }
 
@@ -79,3 +71,51 @@ footer {
 	border-bottom: 4px solid #CDC9C5;
 }
 
+footer {
+	background-color: #FFF;
+	border-top: 4px solid #CDC9C5;
+	padding-top: 20px;
+	margin: auto;
+	width: 100%;
+	height: 80px;
+	text-align: center;
+}
+
+#indexInfo p {
+	text-align: center;
+}
+
+#content, #images {
+	background-color: #FFF;
+	border-top-style: solid;
+	border-width: 5px;
+	border-top-color: #FF9933;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-bottom: 10px;
+	margin-left: 30px;
+	margin-top: 0px;
+}
+
+article {
+	border-bottom: 4px #CDC9C5;
+	border-bottom-style: inset;
+}
+
+#content {
+	order: 1;
+	flex-grow: 3;
+}
+
+#images {
+	order: 2;
+	flex-grow: 1;
+}
+
+/* Fix columns */
+
+.container {
+	display: flex; /* or inline-flex */
+	flex-direction: row;
+	flex-wrap: nowrap;
+}

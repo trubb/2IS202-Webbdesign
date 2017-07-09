@@ -25,12 +25,12 @@
 
 	<!-- page header -->
 	<header>
-		<!-- index page for djupviks hamn -->
-		<h1 id="pageHeader">Djupvik</h1>
-
-		<!-- header image -->
-		<img id="headerImage" src="./images/layout/header.png" width="1900" 
+			<!-- header image -->
+			<img id="headerImage" src="./images/layout/header.png" 
 		alt="Sidans rubrikbild, vy över havet vid solnedgång"/>
+
+			<!-- index page for djupviks hamn -->
+			<h1 id="pageHeader"><span>Djupvik</span></h1>
 
 		<!-- site navigation -->
 		<nav>
@@ -48,71 +48,81 @@
 	</header>
 	
 	<!-- short information about djupvik -->
-	<section id="content">
-		<section id="indexInfo">
-			<h2>Övergripande Info:</h2>
-			<p>
-				Djupviks hamn ligger på Gotlands västkust nästan rakt öster om Lilla Karlsö.
-				Hamnen är otroligt vackert belägen i anslutning till ett gammalt Gotländskt fiskeläge.
-				I hamnen finns under sommarsäsongen en kiosk med lite av varje.
-				Ett par hundra meter ovanför hamnen ligger Djupviks Hotell, ett hotell med restaurang och bra standard.
-			</p>
+	<section class="container">
+
+		<!-- text content -->
+		<section id="content">
+			<section id="indexInfo">
+				<p>
+					Djupviks hamn ligger på Gotlands västkust nästan rakt öster om Lilla Karlsö.
+					Hamnen är otroligt vackert belägen i anslutning till ett gammalt Gotländskt fiskeläge.
+					I hamnen finns under sommarsäsongen en kiosk med lite av varje.
+					Ett par hundra meter ovanför hamnen ligger Djupviks Hotell, ett hotell med restaurang och bra standard.
+				</p>
+
+			</section>
+
+			<!-- condensed newsfeed -->
+			<section id="indexNewsfeed">
+				<h2>Senaste Nytt</h2>
+				<article>
+					<h2>Succé för hamnens dag!</h2>
+					<time datetime="2016-07-18">18 Juli</time>
+					<p>
+						Lördagen den 16 juli arrangerade föreningen Djupviks hamn i Eksta ”Hamnens dag” i Djupvik.
+						Vårt arbete har med åren alltmer också inriktats på att alla besökare, 
+						även de som kommer landvägen skall trivas i det vackra hamnområdet.
+						Nu bjöds det in till ”Hamnens dag”. På plats fanns sjöfartsverkets SAR-helikopter, 
+						Sjöräddningens båt Hwitstjärna, släckningsbil från räddningstjänsten i Klintehamn, 
+						russ från Gannarve och ett antal loppisförsäljare.
+						Aktiviteten lockade ett stort antal besökare.
+					</p>
+					<p>
+						Uppskattningsvis 1000 besökare sökte sig under dagen till Djupvik.
+						Intresset var stort för de besökande organisationerna som informerade och alla fick möjlighet att titta och ställa frågor.
+						Barnen fick rida, de bjöds på bulle och dricka och många prövade lyckan i fiskdammen.
+						Det fanns möjlighet att handla kaffe, korv, dricka och glass.
+						Många dröjde sig kvar i hamnområdet och trivdes i det inledningsvis lite blåsiga men vackra vädret.
+					</p>
+				</article>
+
+				<article>
+					<h2>Hamnjobb</h2>
+					<time datetime="2016-07-18">7 Maj</time>
+
+					<figure>
+						<img src="./images/160507-djupvik.jpg" alt="Deltagare under hamnjobbsdagen." width="100"/>					
+					</figure>
+
+					<p>
+						Lördagen den 7 maj samlades ett 15-tal medlemmar för arbete i hamnen.
+						Kiosken, kajerna och stranden städades. Kajer lagades och gräs brändes.
+						Diverse fix på många håll. Vädret var bra och korven god.
+						Det som återstår inför säsongen är att ta bort släke från stranden, att sätta upp ramp
+						vid kiosken och att fylla kiosken med varor.
+					</p>
+
+				</article>
+
+			</section>
 
 		</section>
 
-		<!-- condensed newsfeed -->
-		<section id="indexNewsfeed">
-			<h2>Senaste Nytt</h2>
-			<article>
-				<h2>Succé för hamnens dag!</h2>
-				<time datetime="2016-07-18">18 Juli</time>
-				<p>
-					Lördagen den 16 juli arrangerade föreningen Djupviks hamn i Eksta ”Hamnens dag” i Djupvik.
-					Vårt arbete har med åren alltmer också inriktats på att alla besökare, 
-					även de som kommer landvägen skall trivas i det vackra hamnområdet.
-					Nu bjöds det in till ”Hamnens dag”. På plats fanns sjöfartsverkets SAR-helikopter, 
-					Sjöräddningens båt Hwitstjärna, släckningsbil från räddningstjänsten i Klintehamn, 
-					russ från Gannarve och ett antal loppisförsäljare.
-					Aktiviteten lockade ett stort antal besökare.
+		<!-- supposedly a column of images from Djupvik -->
+		<figure id="images">
+			<!-- will need reformatting in width and/or height when CSS is introduced -->
+			<img src="./images/boats_in_dock.jpg" alt="Flera båtar som ligger vid en av hamnens bryggor." width="100"/>
+			<img src="./images/calmwaters.jpg" alt="Fyra stugor med havet och Karlsö som fond." width="100"/>
+			<img src="./images/hamn-eva.jpg" alt="En fiskebåt ankommer genom inloppet till hamnen, med vågbrytare i bakgrunden." width="100"/>
 
-					Uppskattningsvis 1000 besökare sökte sig under dagen till Djupvik.
-					Intresset var stort för de besökande organisationerna som informerade och alla fick möjlighet att titta och ställa frågor.
-					Barnen fick rida, de bjöds på bulle och dricka och många prövade lyckan i fiskdammen.
-					Det fanns möjlighet att handla kaffe, korv, dricka och glass.
-					Många dröjde sig kvar i hamnområdet och trivdes i det inledningsvis lite blåsiga men vackra vädret.
-				</p>
-			</article>
+			<figcaption>
+				En bild säger mer än tusen ord, vi skulle dock behövt många fler 
+				bilder för att ge dig en komplett bild utav Djupvik.
+			</figcaption>
 
-			<article>
-				<h2>Hamnjobb</h2>
-				<time datetime="2016-07-18">7 Maj</time>
-				<p>
-					Lördagen den 7 maj samlades ett 15-tal medlemmar för arbete i hamnen.
-					Kiosken, kajerna och stranden städades. Kajer lagades och gräs brändes.
-					Diverse fix på många håll. Vädret var bra och korven god.
-					Det som återstår inför säsongen är att ta bort släke från stranden, att sätta upp ramp
-					vid kiosken och att fylla kiosken med varor.
-				</p>
-				<figure>
-					<img src="./images/160507-djupvik.jpg" alt="Deltagare under hamnjobbsdagen." width="100"/>					
-				</figure>
-			</article>
-		</section>
+		</figure>
+
 	</section>
-
-	<!-- supposedly a column of images from Djupvik -->
-	<figure id="images">
-		<!-- will need reformatting in width and/or height when CSS is introduced -->
-		<img src="./images/boats_in_dock.jpg" alt="Flera båtar som ligger vid en av hamnens bryggor." width="100"/>
-		<img src="./images/calmwaters.jpg" alt="Fyra stugor med havet och Karlsö som fond." width="100"/>
-		<img src="./images/hamn-eva.jpg" alt="En fiskebåt ankommer genom inloppet till hamnen, med vågbrytare i bakgrunden." width="100"/>
-
-		<figcaption>
-			En bild säger mer än tusen ord, vi skulle dock behövt många fler 
-			bilder för att ge dig en komplett bild utav Djupvik.
-		</figcaption>
-
-	</figure>
 
 	<!-- page footer -->
 	<footer>
