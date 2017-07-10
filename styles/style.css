@@ -5,12 +5,14 @@ body {
 }
 
 /* set font family for headings */
+/* use google fonts in order to avoid copyright issues */
 h1,h2,h3,h4,h5,h6 {
 	font-family: 'Fjalla One', sans-serif;
 	color: #1f1f1f;
 }
 
 /* set font family for page content */
+/* use google fonts in order to avoid copyright issues */
 p, li, figcaption, time {
 	font-family: 'Open Sans', sans-serif;
 }
@@ -56,7 +58,7 @@ h1 span {
 	display: inline-block;
 	color: #1f1f1f;
 	text-align: center;
-	padding: 10px 80px;
+	padding: 10px 40px;
 	text-decoration: none;
 	border-bottom: 4px solid #FFF;
 }
@@ -67,6 +69,7 @@ h1 span {
 	border-bottom-color: #CDC9C5;
 }
 
+/* Give the currently active page a bottom border with the color #CDC9C5 */
 #nav li a.active {
 	border-bottom: 4px solid #CDC9C5;
 }
@@ -81,7 +84,8 @@ footer {
 	text-align: center;
 }
 
-#indexInfo p {
+/* Used to make sure that the index page heading text remains  */
+#indexInfo {
 	text-align: center;
 }
 
@@ -97,25 +101,60 @@ footer {
 	margin-top: 0px;
 }
 
+/* give individual articles a grey bottom border */
 article {
 	border-bottom: 4px #CDC9C5;
 	border-bottom-style: inset;
 }
 
-#content {
-	order: 1;
-	flex-grow: 3;
+
+/* Fix columns with flex */
+/* define values for the parent flex container */
+.container {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	margin-left: 100px;
+	margin-right: 100px;
+	margin-bottom: 20px;
 }
 
+/* define values for child flex container */
+#content {
+	order: 1;
+	flex-grow: 1;
+	margin: 10px;
+}
+
+/* define values for child flex container */
 #images {
 	order: 2;
 	flex-grow: 1;
+	margin: 10px;
 }
 
-/* Fix columns */
+figure {
+	max-width: 30%;
+	padding: 10px;
+}
 
-.container {
-	display: flex; /* or inline-flex */
-	flex-direction: row;
-	flex-wrap: nowrap;
+figcaption {
+	border-top: 4px #CDC9C5;
+	border-bottom: 4px #CDC9C5;
+	border-top-style: outset;
+	border-bottom-style: inset;
+	font-style: italic;
+	padding: 20px;
+}
+
+.fancyimage {
+	width: 80%;
+	display: block;
+	margin: 10px auto;
+}
+
+/* place images in news posts on the left hand side */
+#newsFeedImage {
+	float: left;
+	margin: 10px;
 }
