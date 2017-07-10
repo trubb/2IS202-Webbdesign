@@ -1,19 +1,71 @@
 
-/* set background image for page */
+/* begin CSS reset code */
+
+/*
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers 
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+} 
+*/
+
+/* end of CSS reset code */
+
+
+
+/*	set background image for page and make sure the
+	whole page is drawn to the edges of the screen */
 body {
 	background-image: url("../images/layout/body-pattern.jpeg");
+	margin: 0;
+	padding: 0;
 }
 
 /* set font family for headings */
-/* use google fonts in order to avoid copyright issues */
+/* using google fonts in order to reduce loading speed */
 h1,h2,h3,h4,h5,h6 {
 	font-family: 'Fjalla One', sans-serif;
 	color: #1f1f1f;
 }
 
 /* set font family for page content */
-/* use google fonts in order to avoid copyright issues */
-p, li, figcaption, time {
+/* using google fonts in order to reduce loading speed */
+p, li, figcaption, time, dl, optgroup, th, td {
 	font-family: 'Open Sans', sans-serif;
 }
 
@@ -84,30 +136,6 @@ footer {
 	text-align: center;
 }
 
-/* Used to make sure that the index page heading text remains  */
-#indexInfo {
-	text-align: center;
-}
-
-#content, #images {
-	background-color: #FFF;
-	border-top-style: solid;
-	border-width: 5px;
-	border-top-color: #FF9933;
-	padding-left: 10px;
-	padding-right: 10px;
-	margin-bottom: 10px;
-	margin-left: 30px;
-	margin-top: 0px;
-}
-
-/* give individual articles a grey bottom border */
-article {
-	border-bottom: 4px #CDC9C5;
-	border-bottom-style: inset;
-}
-
-
 /* Fix columns with flex */
 /* define values for the parent flex container */
 .container {
@@ -119,18 +147,42 @@ article {
 	margin-bottom: 20px;
 }
 
-/* define values for child flex container */
-#content {
-	order: 1;
+/* used to make sure that the history page has only one column */
+#historyContainer {
+	flex-direction: column;
+}
+
+/*	Used to make sure that the index page heading text remains
+	unique as it should only exist at most once per page */
+#indexInfo {
+	text-align: center;
+}
+
+/* define variables for .content and .images, child flex containers */
+.content, .images, .history {
+	background-color: #FFF;
+	border-top-style: solid;
+	border-top-width: 5px;
+	border-top-color: #FF9933;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-bottom: 10px;
+	margin-left: 30px;
+	margin-top: 0px;
 	flex-grow: 1;
+	flex-shrink: 1;
 	margin: 10px;
 }
 
-/* define values for child flex container */
-#images {
-	order: 2;
-	flex-grow: 1;
-	margin: 10px;
+#contentHeader {
+	text-align: center;
+}
+
+/* give individual articles a grey bottom border */
+article {
+	border-bottom: 4px #CDC9C5;
+	border-bottom-style: inset;
+	clear: both;
 }
 
 figure {
@@ -138,13 +190,17 @@ figure {
 	padding: 10px;
 }
 
+/* define ficaptions */
 figcaption {
 	border-top: 4px #CDC9C5;
 	border-bottom: 4px #CDC9C5;
 	border-top-style: outset;
 	border-bottom-style: inset;
+	text-align: center;
 	font-style: italic;
 	padding: 20px;
+	padding-right: 40px;
+	padding-left: 40px;
 }
 
 .fancyimage {
@@ -153,8 +209,88 @@ figcaption {
 	margin: 10px auto;
 }
 
+.infoFigure {
+	width: 100%;
+	display: flex;
+	margin: auto;
+}
+
+.infoImage {
+	min-width: 50%;
+	max-width: 100%;
+	margin: 10px auto;
+	padding: 10px;
+}
+
 /* place images in news posts on the left hand side */
-#newsFeedImage {
+.newsFeedImage {
 	float: left;
 	margin: 10px;
+}
+
+#gastPlatsInfo {
+	max-width: 70%;
+}
+
+#gastPlatsInfo h2, .history h2, #contact_form h2, #memberlist h2{
+	text-align: center;
+}
+
+#vaderInfo, #memberlist {
+	padding-bottom: 20px;
+}
+
+table, th, td {
+	border: 1px solid black;
+	border-collapse: collapse;
+} 
+
+/* set every odd-numbered table row to have a grey background */
+tr:nth-child(odd) {
+	background-color: #CDC9C5;
+}
+
+th, td {
+	width: 1%;
+	padding-left: 5px;
+	padding-right: 20px;
+}
+
+.history figure {
+	margin:	0 auto;
+}
+
+.history figcaption {
+	border: none;
+}
+
+fieldset {
+	margin: auto;
+	margin-bottom: 20px;
+	border-style: none;
+}
+
+fieldset p {
+	text-align: center;
+}
+
+.formbutton {
+	height: 30px;
+	width: 200px;
+	margin-top: 20px;
+	margin-left: 30px;
+	margin-right: 30px;
+}
+
+#buttons {
+	text-align: center;
+}
+
+#englishImages {
+	border-style: hidden;
+	float: left;
+}
+
+.englishPageContent h2 {
+	text-align: center;
 }

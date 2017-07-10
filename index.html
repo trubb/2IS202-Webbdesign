@@ -18,7 +18,7 @@
 	<title>Start - Djupviks Hamn</title>
 	<meta charset="UTF-8" />
 	<link rel="stylesheet" type="text/css" href="./styles/style.css">
-	<!-- use google fonts in order to avoid copyright issues -->
+	<!-- use google fonts in order to speed up page loading by serving content from a fast CDN -->
 	<link href="https://fonts.googleapis.com/css?family=Fjalla+One|Open+Sans" rel="stylesheet">
 </head>
 
@@ -26,12 +26,12 @@
 
 	<!-- page header -->
 	<header>
-			<!-- header image -->
-			<img id="headerImage" src="./images/layout/header.png" 
+		<!-- header image -->
+		<img id="headerImage" src="./images/layout/header.png" 
 		alt="Sidans rubrikbild, vy över havet vid solnedgång"/>
 
-			<!-- index page for djupviks hamn -->
-			<h1 id="pageHeader"><span>Djupvik</span></h1>
+		<!-- index page for djupviks hamn -->
+		<h1 id="pageHeader"><span>Djupvik</span></h1>
 
 		<!-- site navigation -->
 		<nav>
@@ -52,7 +52,7 @@
 	<section class="container">
 
 		<!-- text content -->
-		<section id="content">
+		<section class="content">
 			<section id="indexInfo">
 				<p>
 					Djupviks hamn ligger på Gotlands västkust nästan rakt öster om Lilla Karlsö.
@@ -91,7 +91,7 @@
 					<h2>Hamnjobb</h2>
 					<time datetime="2016-07-18">7 Maj</time>
 
-					<figure id="newsFeedImage">
+					<figure class="newsFeedImage">
 						<img src="./images/160507-djupvik.jpg" alt="Deltagare under hamnjobbsdagen." width="100"/>
 					</figure>
 
@@ -110,7 +110,7 @@
 		</section>
 
 		<!-- supposedly a column of images from Djupvik -->
-		<figure id="images">
+		<figure class="images">
 			<!-- will need reformatting in width and/or height when CSS is introduced -->
 			<img src="./images/boats_in_dock.jpg" alt="Flera båtar som ligger vid en av hamnens bryggor." width="80%" class="fancyimage" />
 			<img src="./images/calmwaters.jpg" alt="Fyra stugor med havet och Karlsö som fond." width="100%" class="fancyimage" />
