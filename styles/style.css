@@ -2,37 +2,7 @@
 /* begin CSS reset code */
 
 /*
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers 
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
+
 blockquote:before, blockquote:after,
 q:before, q:after {
 	content: '';
@@ -44,78 +14,123 @@ table {
 } 
 */
 
+
 /* end of CSS reset code */
 
-
+/*	set * to a known baseline in order to prevent browser-default values from loading */
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	vertical-align: baseline;
+	font-size: 1em;
+}
 
 /*	set background image for page and make sure the
 	whole page is drawn to the edges of the screen */
 body {
 	background-image: url("../images/layout/body-pattern.jpeg");
-	margin: 0;
-	padding: 0;
+	margin: 0; /* ensure that body content is drawn edge to edge */
+	padding: 0; /* ensure that body content is drawn edge to edge */
 }
 
-/* set font family for headings */
-/* using google fonts in order to reduce loading speed */
+/*	set font family for headings */
+/*	using google fonts in order to increase loading speed */
 h1,h2,h3,h4,h5,h6 {
 	font-family: 'Fjalla One', sans-serif;
-	color: #1f1f1f;
+	color: #1F1F1F;
 }
 
-/* set font family for page content */
-/* using google fonts in order to reduce loading speed */
-p, li, figcaption, time, dl, optgroup, th, td {
-	font-family: 'Open Sans', sans-serif;
+/*	set font family for page content */
+/*	using google fonts in order to increase loading speed */
+p, li, figcaption, time, dl, optgroup, th, td, textarea {
+	font: 1em/1.44em 'Open Sans', sans-serif;
+	color: #1F1F1F;
+	margin: 1em auto 1em 1em;
 }
 
+/*	define h1 styling and position it properly by hooking it
+	to the top of the page and setting the top-side offset */
 h1 {
+	font-size: 32px;
 	position: absolute;
 	top: 50px;
 	left: 0;
 	width: 100%;
-}
-
-h1 span {
+	margin-top: 21px;
 	letter-spacing: -1px;
-	background-color: rgb(255,255,255);
-	background-color: rgba(255,255,255,0.5);
-	padding-right: 20px;
-	padding-left: 200px;
 }
 
+/*	define span within a h1 in order to easily style the h1 background */
+h1 span {
+	background-color: rgba(255,255,255,0.5);
+	padding: 0 20px 0 200px;
+}
+
+/*	define h2 size and margins */
+h2 {
+	font-size: 28px;
+	margin: 1em 0 0 16px;
+}
+
+/*	define h3 size and margins */
+h3 {
+	font-size: 22px;
+	margin: 1em 0 0 16px;
+}
+
+/*	define h4 size and margins */
+h4 {
+	font-size: 16px;
+	margin: 1em 0 0 16px;
+}
+
+/*	define h5 size and margins */
+h5 {
+	font-size: 13px;
+	margin: 1em 0 0 16px;
+}
+
+/*	define h6 size and margins */
+h6 {
+	font-size: 10px;
+	margin: 1em 0 0 16px;
+}
+
+/*	set the header image to stay put at the top of the screen and cover the whole width */
 #headerImage {
 	position: relative;
 	width: 100%;
 	height: 250px;
 }
 
-/* style navbar */
+/*	style base nav element */
 #nav {
 	list-style-type: none;
-	margin: 0;
-	margin-top: -5px;
-	margin-bottom: 10px;
+	margin: -5px 0px 10px 0px;
 	padding: 0;
 	overflow: hidden;
-	background-color: #FFF;
+	background-color: #F5F5F5;
 	text-align: center;
 }
 
+/*	set nav list element to display inline */
 #nav li {
 	display: inline;
 }
 
+/*	define base state for anchor elements in the navbar */
 #nav li a {
 	display: inline-block;
-	color: #1f1f1f;
-	text-align: center;
-	padding: 10px 40px;
+	color: #1F1F1F;
+	padding: 10px 35px 10px 35px;
 	text-decoration: none;
-	border-bottom: 4px solid #FFF;
+	border-bottom: 4px solid #F5F5F5;
+	width: 6%;
 }
 
-/* Change the link color to #CDC9C5 on hover */
+/*	Change the link color to #CDC9C5 on hover
+	in order to not have an ugly white bottom border on hovered elements, set it to grey */
 #nav li a:hover {
 	background-color: #CDC9C5;
 	border-bottom-color: #CDC9C5;
@@ -126,171 +141,179 @@ h1 span {
 	border-bottom: 4px solid #CDC9C5;
 }
 
+/*	set footer styles
+	would be great if it stuck to the bottom of the page
+	but that requires a hackier hack than this */
 footer {
-	background-color: #FFF;
-	border-top: 4px solid #CDC9C5;
-	padding-top: 20px;
-	margin: auto;
-	width: 100%;
-	height: 80px;
-	text-align: center;
+	background-color: #F5F5F5; /* background color is doesnt-burn-your-eyes-out-white */
+	border-top: 4px solid #CDC9C5; /* a nice slightly darker border to define it */
+	padding-top: 20px; /* offset the footer from the content above it */
+	height: 80px; /* make the footer span 80 pixels in height*/
+	text-align: center; /* put the text in the footer dead center */
 }
 
-/* Fix columns with flex */
-/* define values for the parent flex container */
+/*	magically fix columns with flex */
+/*	define values for the parent flex container */
 .container {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: nowrap;
-	margin-left: 100px;
-	margin-right: 100px;
-	margin-bottom: 20px;
+	margin: 0 100px 20px 100px;
 }
 
-/* used to make sure that the history page has only one column */
+/*	used to make sure that the history page has only one column 
+	yet inherits the rest of the values from .container */
 #historyContainer {
 	flex-direction: column;
 }
 
-/*	Used to make sure that the index page heading text remains
-	unique as it should only exist at most once per page */
-#indexInfo {
-	text-align: center;
-}
-
-/* define variables for .content and .images, child flex containers */
+/* define variables for .content, .images, and .history, all child flex containers */
 .content, .images, .history {
-	background-color: #FFF;
-	border-top-style: solid;
-	border-top-width: 5px;
-	border-top-color: #FF9933;
-	padding-left: 10px;
-	padding-right: 10px;
-	margin-bottom: 10px;
-	margin-left: 30px;
-	margin-top: 0px;
+	background-color: #F5F5F5;
+	border-top: 5px solid #FF9933;
+	padding: 0 10px 0 10px;
+	margin: 10px 10px 10px 30px;
 	flex-grow: 1;
 	flex-shrink: 1;
-	margin: 10px;
 }
 
-#contentHeader {
-	text-align: center;
+/*	set flex-basis for .content, the primary element of all pages */
+.content {
+	flex-basis: 70%;
 }
 
-/* give individual articles a grey bottom border */
+
+/*	set flex-basis for .images and #vaderInfo, two secondary content types */
+.images, #vaderInfo {
+	flex-basis: 30%;
+}
+
+/*	give individual articles a grey bottom border */
 article {
-	border-bottom: 4px #CDC9C5;
-	border-bottom-style: inset;
-	clear: both;
+	border-bottom: 4px #CDC9C5; /* that delightful grey colour, 4 pixels wide of it */
+	border-bottom-style: inset; /* absolute hack to get a nice grey shaded bottom border */
 }
 
+/*	give figures 10px padding and try to set a max size for them */
 figure {
 	max-width: 30%;
 	padding: 10px;
 }
 
-/* define ficaptions */
+/* define figcaption to look totally awesome */
 figcaption {
-	border-top: 4px #CDC9C5;
-	border-bottom: 4px #CDC9C5;
-	border-top-style: outset;
-	border-bottom-style: inset;
-	text-align: center;
-	font-style: italic;
-	padding: 20px;
-	padding-right: 40px;
-	padding-left: 40px;
+	border: 4px #CDC9C5; /* that delightful grey colour, 4 pixels wide of it */
+	border-top-style: outset; /* absolute hack to get a nice grey shaded top border */
+	border-bottom-style: inset; /* absolute hack to get a nice grey shaded bottom border */
+	text-align: center; /* put the text in the middle of the element */
+	font-style: italic; /* make the text lean nicely to the side to show it's not some simple paragraph */
+	padding: 20px 40px 20px 40px; /*push the border out a bit */
 }
 
+/*	do a slightly more specific styling for images of this kind */
 .fancyimage {
-	width: 80%;
-	display: block;
-	margin: 10px auto;
+	width: 80%; /* set the images to be of an okay size */
+	display: block; /* essentially put the images into a column */
+	margin: 10px auto; /* hopefully puts the images in the horiontal center of the parent */
 }
 
-.infoFigure {
-	width: 100%;
-	display: flex;
+/*	do a slightly more specific styling for images inside this type of figure */
+figure.infoFigure {
+	width: 100%; /* try to set the images to be a proper size for the page */
+	display: flex; /* put them side by side by a major hack */
 	margin: auto;
 }
 
+/*	try to set a proper size and position for the images within a .infoFigure*/
 .infoImage {
-	min-width: 50%;
-	max-width: 100%;
-	margin: 10px auto;
-	padding: 10px;
+	min-width: 50%; /* try to set the images to have a proper min-size for the page */
+	max-width: 100%; /* try to set the images to have a proper max-size for the page */
+	margin: 10px auto; /* vertical margins 10px horizontal margins automatic */
+	padding: 10px; /* 10px padding all around */
 }
 
 /* place images in news posts on the left hand side */
 .newsFeedImage {
-	float: left;
-	margin: 10px;
+	float: left; /* float the image to the left */
+	margin: 10px; /* give it a 10px margin on all sides */
 }
 
-#gastPlatsInfo {
-	max-width: 70%;
-}
-
-#gastPlatsInfo h2, .history h2, #contact_form h2, #memberlist h2{
+/*	center text in the following elements, classes, and id's */
+#gastPlatsInfo h2, 
+.history h2, 
+#contact_form h2, 
+#memberlist h2, 
+.englishPageContent h2, 
+#contentHeader, 
+#indexInfo,
+#buttons {
 	text-align: center;
 }
 
+/*	set bottom padding to 20px for the following elements */
 #vaderInfo, #memberlist {
 	padding-bottom: 20px;
 }
 
+/*	give tables a 1px wide solid black border without a strange hollow middle*/
 table, th, td {
 	border: 1px solid black;
 	border-collapse: collapse;
 } 
 
-/* set every odd-numbered table row to have a grey background */
+/* set every odd-numbered table row to have a grey background, for legibility */
 tr:nth-child(odd) {
 	background-color: #CDC9C5;
 }
 
+/*	set size and padding for table header and table data elements */
 th, td {
-	width: 1%;
-	padding-left: 5px;
-	padding-right: 20px;
+	width: 1%; /* absolute hack to get table columns to span the whole width of parent element */
+	padding: 0 20px 0 5px; /* set vertical padding to 0, horizontal to 20 for right, 5 for left */
 }
 
-.history figure {
-	margin:	0 auto;
+/*	set table headings to actually look like headings without actually being headings */
+th {
+	font-weight: bold;
 }
 
-.history figcaption {
-	border: none;
+/*	sligth hack to make the figure on the history page and it's caption look more proper */
+.history figure, .history figcaption {
+	margin:	0 auto; /* set vertical margin to 0 and horizontal to auto */
+	border: none; /* remove all borders from the elements */
 }
 
-fieldset {
-	margin: auto;
-	margin-bottom: 20px;
-	border-style: none;
+/*	apply general style to the contact form */
+form {
+	margin: auto auto 20px auto ; /* set all margins but the bottom one to auto */
+	text-align: center; /* put everything within the form dead center */
 }
 
-fieldset p {
-	text-align: center;
+/*	set borders to input and textarea elements, 
+	skipping the optgroup as it does not play nicely*/
+input, textarea {
+	border: 1px solid #1F1F1F; /* same not-really-black-black as the text */
+	text-align: center; /* set the placeholder texts to be centered too */
 }
 
+/*	as we don't want a border on the optgroup due to how badly it behaves
+	with most styling, just set it's content to be centered and remove
+	it's margins and padding to make it look acceptably mediocre*/
+optgroup {
+	text-align: center; /* explicitly set the content of the optgroup to be centered */
+	margin: 0; /*reset margin and padding again since that nice font selection up top set them for us*/
+	padding: 0;
+}
+
+/*	style the send button for the form */
 .formbutton {
-	height: 30px;
-	width: 200px;
-	margin-top: 20px;
-	margin-left: 30px;
-	margin-right: 30px;
+	height: 30px; /* make it 30px tall */
+	width: 200px; /* make it 200px wide */
+	margin: 20px 30px 0 30px; /* give it a 20px margin up top, and 30px to the sides */
 }
 
-#buttons {
-	text-align: center;
-}
-
+/*	perform a totally clever hack to style and position the images on the english page */
 #englishImages {
-	border-style: hidden;
-	float: left;
-}
-
-.englishPageContent h2 {
-	text-align: center;
+	border: 0; /* remove the top border native to the .images class */
+	float: left; /* put the images to the left of the text content */
 }
