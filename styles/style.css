@@ -1,29 +1,10 @@
-
-/* begin CSS reset code */
-
-/*
-
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-} 
-*/
-
-
-/* end of CSS reset code */
-
 /*	set * to a known baseline in order to prevent browser-default values from loading */
 * {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	vertical-align: baseline;
-	font-size: 1em;
+	margin: 0; /* set margins to 0 */
+	padding: 0; /* set padding to 0 */
+	border: 0; /* set borders to 0 */
+	vertical-align: baseline; /* set vertical alignment to baseline of parent */
+	font-size: 16px; /* set the baseline font size */
 }
 
 /*	set background image for page and make sure the
@@ -37,107 +18,104 @@ body {
 /*	set font family for headings */
 /*	using google fonts in order to increase loading speed */
 h1,h2,h3,h4,h5,h6 {
-	font-family: 'Fjalla One', sans-serif;
-	color: #1F1F1F;
+	font-family: 'Fjalla One', sans-serif; /* "customer's" favourite font */
+	color: #1F1F1F; /* not-quite-black */
 }
 
 /*	set font family for page content */
 /*	using google fonts in order to increase loading speed */
 p, li, figcaption, time, dl, optgroup, th, td, textarea {
-	font: 1em/1.44em 'Open Sans', sans-serif;
-	color: #1F1F1F;
-	margin: 1em auto 1em 1em;
+	font: 1em/1.44em 'Open Sans', sans-serif; /* a good sans-serif body font */
+	color: #1F1F1F; /* not-quite-black */
+	margin: 1em auto 1em 1em; /* default margin is 1em on all sides except to the right */
 }
 
 /*	define h1 styling and position it properly by hooking it
 	to the top of the page and setting the top-side offset */
 h1 {
-	font-size: 32px;
-	position: absolute;
-	top: 50px;
-	left: 0;
-	width: 100%;
-	margin-top: 21px;
-	letter-spacing: -1px;
+	font-size: 32px; /* set the h1 font size for general cases */
+	position: absolute; /* remove h1 from the normal document flow */
+	top: 71px; /* set a 71px offset from the top of the page to position it in front of the header image */
+	left: 0; /* set left-hand offset to 0 */
+	letter-spacing: -1px; /* pull letters together for a nicer look */
 }
 
 /*	define span within a h1 in order to easily style the h1 background */
 h1 span {
-	background-color: rgba(255,255,255,0.5);
-	padding: 0 20px 0 200px;
+	background-color: rgba(255,255,255,0.5); /* give the h1 text a white translucent background */
+	padding: 0 20px 0 200px; /* set padding to 0 for top and bottom, 20px for the right and 200px for the left */
+	font-size: 32px; /* set font size for span too in order to keep h1 span a proper size */
 }
 
 /*	define h2 size and margins */
 h2 {
-	font-size: 28px;
-	margin: 1em 0 0 16px;
+	font-size: 28px; /* h2 < h1 */
+	margin: 1em 0 0 16px; /* define equal margins for h* elements*/
 }
 
 /*	define h3 size and margins */
 h3 {
-	font-size: 22px;
-	margin: 1em 0 0 16px;
+	font-size: 22px; /* h3 < h2 */
+	margin: 1em 0 0 16px; /* define equal margins for h* elements*/
 }
 
 /*	define h4 size and margins */
 h4 {
-	font-size: 16px;
-	margin: 1em 0 0 16px;
+	font-size: 16px; /* h4 < h3 */
+	margin: 1em 0 0 16px; /* define equal margins for h* elements*/
 }
 
 /*	define h5 size and margins */
 h5 {
-	font-size: 13px;
-	margin: 1em 0 0 16px;
+	font-size: 13px; /* h5 < h4 */
+	margin: 1em 0 0 16px; /* define equal margins for h* elements*/
 }
 
 /*	define h6 size and margins */
 h6 {
-	font-size: 10px;
-	margin: 1em 0 0 16px;
+	font-size: 10px; /* h6 < h5 */
+	margin: 1em 0 0 16px; /* define equal margins for h* elements*/
 }
 
-/*	set the header image to stay put at the top of the screen and cover the whole width */
+/*	set the header image to cover the whole width, will result in it being stretched */
 #headerImage {
-	position: relative;
-	width: 100%;
-	height: 250px;
+	width: 100%; /* set image width to 100% of page width */
+	height: 250px; /* set a static height for the image */
 }
 
 /*	style base nav element */
-#nav {
-	list-style-type: none;
-	margin: -5px 0px 10px 0px;
-	padding: 0;
-	overflow: hidden;
-	background-color: #F5F5F5;
-	text-align: center;
+.nav {
+	list-style-type: none; /* hide the list item markers */
+	margin: -5px 0px 10px 0px; /*set topside margin to -5px to "attach" the navbar to the header */
+	overflow: hidden; /* clip content if needed */
+	background-color: #F5F5F5; /* close to white background */
+	text-align: center; /* set text alignment to center */
 }
 
 /*	set nav list element to display inline */
-#nav li {
+.nav li {
 	display: inline;
 }
 
 /*	define base state for anchor elements in the navbar */
-#nav li a {
-	display: inline-block;
-	color: #1F1F1F;
-	padding: 10px 35px 10px 35px;
-	text-decoration: none;
+.nav li a {
+	display: inline-block; /* set anchor elements to display as inline-block */
+	color: #1F1F1F; /* not-quite-black text */
+	padding: 10px 35px; /* top/bottom 10px, sides 35px */
+	text-decoration: none; /* remove the decoration from the links */
 	border-bottom: 4px solid #F5F5F5;
-	width: 6%;
+	width: 80px; /* set size of nav elements to 80px wide */
 }
 
-/*	Change the link color to #CDC9C5 on hover
+/*	Change the background color of the anchor elements to #CDC9C5 on hover
 	in order to not have an ugly white bottom border on hovered elements, set it to grey */
-#nav li a:hover {
-	background-color: #CDC9C5;
+.nav li a:hover {
+	background-color: #CDC9C5; /* the colour is inteded to be the same, this is not a mistake*/
 	border-bottom-color: #CDC9C5;
 }
 
-/* Give the currently active page a bottom border with the color #CDC9C5 */
-#nav li a.active {
+/* Give the currently active page a solid bottom border with the color #CDC9C5 */
+.nav li a.active {
 	border-bottom: 4px solid #CDC9C5;
 }
 
@@ -155,37 +133,37 @@ footer {
 /*	magically fix columns with flex */
 /*	define values for the parent flex container */
 .container {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: nowrap;
-	margin: 0 100px 20px 100px;
+	display: flex; /* set display type to flex*/
+	flex-direction: row; /* set the flex-direction to be a row */
+	flex-wrap: nowrap; /* set flex items to be laid out in a single line */
+	margin: 0 100px 20px 100px; /* margins to: top 0, right 100px, bottom 20px, left 100px */
 }
 
 /*	used to make sure that the history page has only one column 
 	yet inherits the rest of the values from .container */
-#historyContainer {
-	flex-direction: column;
+.historyContainer {
+	flex-direction: column; /* set the history page to display flex childs in a column */
 }
 
 /* define variables for .content, .images, and .history, all child flex containers */
 .content, .images, .history {
-	background-color: #F5F5F5;
-	border-top: 5px solid #FF9933;
-	padding: 0 10px 0 10px;
-	margin: 10px 10px 10px 30px;
-	flex-grow: 1;
-	flex-shrink: 1;
+	background-color: #F5F5F5; /* set background colour of the page content to off-white */
+	border-top: 5px solid #FF9933; /* set a top border to 5px wide, solid, orange */
+	padding: 0 10px; /* set vertical padding to 0, horizontal to 10px */
+	margin: 10px 10px 10px 30px; /* set all margins but the left to 10px */
+	flex-grow: 1; /* set base flex growth factor */
+	flex-shrink: 1; /* set base flex growth factor */
 }
 
 /*	set flex-basis for .content, the primary element of all pages */
 .content {
-	flex-basis: 70%;
+	flex-basis: 70%; /* how much of the available space .content will take up */
 }
 
 
 /*	set flex-basis for .images and #vaderInfo, two secondary content types */
 .images, #vaderInfo {
-	flex-basis: 30%;
+	flex-basis: 30%; /* how much of the available space .images and #vaderInfo will take up */
 }
 
 /*	give individual articles a grey bottom border */
@@ -246,7 +224,7 @@ figure.infoFigure {
 .englishPageContent h2, 
 #contentHeader, 
 #indexInfo,
-#buttons {
+#buttons, optgroup {
 	text-align: center;
 }
 
@@ -300,7 +278,6 @@ input, textarea {
 	with most styling, just set it's content to be centered and remove
 	it's margins and padding to make it look acceptably mediocre*/
 optgroup {
-	text-align: center; /* explicitly set the content of the optgroup to be centered */
 	margin: 0; /*reset margin and padding again since that nice font selection up top set them for us*/
 	padding: 0;
 }
