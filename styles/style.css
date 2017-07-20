@@ -101,10 +101,10 @@ h6 {
 .nav li a {
 	display: inline-block; /* set anchor elements to display as inline-block */
 	color: #1F1F1F; /* not-quite-black text */
-	padding: 10px 35px; /* top/bottom 10px, sides 35px */
+	padding: 10px 0; /* top/bottom 10px, sides 0 */
 	text-decoration: none; /* remove the decoration from the links */
 	border-bottom: 4px solid #F5F5F5;
-	width: 80px; /* set size of nav elements to 80px wide */
+	width: 150px; /* set size of nav elements to 150px wide */
 }
 
 /*	Change the background color of the anchor elements to #CDC9C5 on hover
@@ -199,15 +199,18 @@ figcaption {
 figure.infoFigure {
 	width: 100%; /* try to set the images to be a proper size for the page */
 	display: flex; /* put them side by side by a major hack */
-	margin: auto;
+	flex-direction: row; /* explicity state flex direction in order to force images to be side by side */
+	margin: auto; /* magically center images */
+	justify-content: center; /* magically center images part 2 */
+
+
 }
 
 /*	try to set a proper size and position for the images within a .infoFigure*/
 .infoImage {
-	min-width: 50%; /* try to set the images to have a proper min-size for the page */
-	max-width: 100%; /* try to set the images to have a proper max-size for the page */
 	margin: 10px auto; /* vertical margins 10px horizontal margins automatic */
 	padding: 10px; /* 10px padding all around */
+	height: 250px; /* images are 250px tall*/
 }
 
 /* place images in news posts on the left hand side */
@@ -253,6 +256,11 @@ th, td {
 /*	set table headings to actually look like headings without actually being headings */
 th {
 	font-weight: bold;
+}
+
+/* make the explanatory elements stand out clearly */
+dd {
+	padding-left: 40px;
 }
 
 /*	sligth hack to make the figure on the history page and it's caption look more proper */
