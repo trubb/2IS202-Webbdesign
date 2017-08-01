@@ -302,3 +302,76 @@ optgroup {
 	border: 0; /* remove the top border native to the .images class */
 	float: left; /* put the images to the left of the text content */
 }
+
+
+/* begin @media responsive rules*/
+/* ff the screen width is less then 480px */
+@media all and (max-width: 480px) {
+
+	/*	set the header image to cover the whole width, will result in it being stretched */
+	#headerImage {
+		width: 100%; /* set image width to 100% of page width */
+		height: 150px; /* set a static height for the image */
+	}
+
+	/*	define values for the parent flex container */
+	.container {
+		display: flex; /* set display type to flex*/
+		flex-direction: column; /* set the flex-direction to be a column */
+		flex-wrap: nowrap; /* set flex items to be laid out in a single line */
+		margin: 0 0 20px 0; /* margins to: top 0, right 0, bottom 20px, left 0 */
+		min-width: 400px;
+	}
+
+	.content {
+		max-width: 100%;
+		flex-basis: 100%; /* how much of the available space .content will take up */
+		margin: 5px 30px;
+	}
+
+	/*	set flex-basis for .images and #vaderInfo, two secondary content types */
+	.images, #vaderInfo {
+		flex-basis: 100%; /* how much of the available space .images and #vaderInfo will take up */
+	}
+
+	/* place images in news posts on the left hand side */
+	.newsFeedImage {
+		margin: 0px; /* give it a 5px margin on all sides */
+	}
+
+	/*	give figures 10px padding and try to set a max size for them */
+	figure {
+		max-width: 100%;
+		padding: 10px;
+	}
+
+	figure.infoFigure {
+		flex-direction: column; /* hack to get the images to not be in a row */
+	}
+
+	.infoImage {
+		height: 150px; /* set height to 150px so they look good */
+		margin: 5px auto; /* smaller margin than before as the whole page needs to fit in less space */
+	}
+
+	/*	set size and padding for table header and table data elements */
+	th, td, tr {
+		max-width: 10px; /* absolute hack to get table columns to be of acceptable size */
+		padding: 0 20px 0 5px; /* set vertical padding to 0, horizontal to 20 for right, 5 for left */
+		font-size: 0.83em; /* set font size to be slightly smaller in order to fit data within columns */
+	}
+}
+
+/* screen width above 720px */
+@media all and (max-width: 720px) {
+
+
+
+
+}
+
+/* screen width above 1200px */
+@media all and (max-width: 1200px) {
+
+
+}
