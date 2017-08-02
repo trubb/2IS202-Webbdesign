@@ -314,11 +314,19 @@ optgroup {
 		padding: 0 20px 0 5px; /* set vertical padding to 0, horizontal to 20 for right, 5 for left */
 		font-size: 0.83em; /* set font size to be slightly smaller in order to fit data within columns */
 	}
+
+	figure {
+		max-width: 30%;
+		padding: 10px;
+	}
 }
 
-/* I really don't feel like I need to have specific size for  */
+/* I really don't feel like I need to have specific size for more screen sizes 
+*  <1024px wide, as the default is to serve up a page that where the content
+*  is displayed in columns as soon as we switch to a viewport size of tablet or
+*  smartphone type, which usually happens below 1000px */
 /* screen width up to 100px */
-@media all and (max-width: 1000px) {
+@media all and (max-width: 1024px) {
 
 	/*	set the header image to cover the whole width, will result in it being stretched */
 	#headerImage {
@@ -330,7 +338,7 @@ optgroup {
 	.container {
 		flex-direction: column; /* set the flex-direction to be a column */
 		margin: 0 0 20px 0; /* margins to: top 0, right 0, bottom 20px, left 0 */
-		min-width: 400px;
+		min-width: 360px;
 	}
 
 	.content {
@@ -350,9 +358,10 @@ optgroup {
 	}
 
 	/*	give figures 10px padding and try to set a max size for them */
-	figure {
+	figure:not(.historyImage) {
 		max-width: 100%;
 		padding: 10px;
+		margin: auto;
 	}
 
 	figure.infoFigure {
@@ -364,9 +373,4 @@ optgroup {
 		margin: 5px auto; /* smaller margin than before as the whole page needs to fit in less space */
 	}
 
-	/*	set size and padding for table header and table data elements */
-	th, td, tr {
-		max-width: 10px; /* absolute hack to get table columns to be of acceptable size */
-		padding: 0 20px 0 5px; /* set vertical padding to 0, horizontal to 20 for right, 5 for left */
-	}
 }
