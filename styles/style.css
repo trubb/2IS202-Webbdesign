@@ -306,7 +306,19 @@ optgroup {
 
 /* begin @media responsive rules*/
 /* ff the screen width is less then 480px */
-@media all and (max-width: 480px) {
+@media all and (max-width: 720px) {
+
+	/*	set size and padding for table header and table data elements */
+	#memberlist th, #memberlist td {
+		max-width: 10px; /* absolute hack to get table columns to be of acceptable size */
+		padding: 0 20px 0 5px; /* set vertical padding to 0, horizontal to 20 for right, 5 for left */
+		font-size: 0.83em; /* set font size to be slightly smaller in order to fit data within columns */
+	}
+}
+
+/* I really don't feel like I need to have specific size for  */
+/* screen width up to 100px */
+@media all and (max-width: 1000px) {
 
 	/*	set the header image to cover the whole width, will result in it being stretched */
 	#headerImage {
@@ -316,9 +328,7 @@ optgroup {
 
 	/*	define values for the parent flex container */
 	.container {
-		display: flex; /* set display type to flex*/
 		flex-direction: column; /* set the flex-direction to be a column */
-		flex-wrap: nowrap; /* set flex items to be laid out in a single line */
 		margin: 0 0 20px 0; /* margins to: top 0, right 0, bottom 20px, left 0 */
 		min-width: 400px;
 	}
@@ -358,20 +368,5 @@ optgroup {
 	th, td, tr {
 		max-width: 10px; /* absolute hack to get table columns to be of acceptable size */
 		padding: 0 20px 0 5px; /* set vertical padding to 0, horizontal to 20 for right, 5 for left */
-		font-size: 0.83em; /* set font size to be slightly smaller in order to fit data within columns */
 	}
-}
-
-/* screen width above 720px */
-@media all and (max-width: 720px) {
-
-
-
-
-}
-
-/* screen width above 1200px */
-@media all and (max-width: 1200px) {
-
-
 }
