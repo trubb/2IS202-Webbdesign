@@ -109,7 +109,7 @@ h6 {
 
 /*	Change the background color of the anchor elements to #CDC9C5 on hover
 	in order to not have an ugly white bottom border on hovered elements, set it to grey */
-.nav li a:hover {
+.nav li a:hover, nav li a:focus {
 	background-color: #CDC9C5; /* the colour is inteded to be the same, this is not a mistake*/
 	border-bottom-color: #CDC9C5;
 }
