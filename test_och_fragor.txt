@@ -1,0 +1,73 @@
+Test
+Fungerar siten utan bilder?
+    Ja, självklart ser det stökigare ut än med bilder, men då huvudinnehållet är text är påverkan inte överdrivet stor.
+
+Korrekt rubrikstruktur
+    html-sidorna validerar i w3c's html5-validator och jag anser att rubrikordningen är så lämplig som den går att få till.
+
+Kontrast
+    Svart text på off-white bakgrund, hög kontrast mellan dessa färger.
+    Contrast Ratio: 15.12:1 i webaim contrast checker. (text: #1f1f1f, bakgrund #f5f5f5)
+
+Textstorleken
+    När jag testar i Firefox och Chrome så går det bra att zooma in upp till 300% respektive 500% (övre gränsen för webbläsaren) utan problem andra än att bilderna ser gräsliga ut pga deras låga upplösning.
+    Zoomas enbart text blir det visst överlapp i navbaren, vilket i mina ögon vägs upp av att det går att navigera med tab, varpå det tydligt markeras var markören står. Att nav-elementen blir gråa vid :hover och :focus underlättar även det kraftigt.
+
+Navigering utan mus
+    Ordningen är logisk (strikt vänster till höger, uppifrån och ner) beroende på struktur i html-koden, och markör för vad man "tabbat till" syns tydligt i både Chrome och Firefox.
+
+Validerar siten
+    Ja, all CSS och HTML-kod validerar.
+
+
+
+Test med Chris Pederick Web Developer toolbar
+javascript/java
+    Sidan använder inte javascript, ingen påverkan
+Cookies
+    Sidan använder inte cookies, ingen påverkan
+CSS
+    Sidan fungerar acceptabelt utan CSS, strukturen och ordning är logisk
+Forms
+    Ingen påverkan, alla element i formuläret är alltid synliga
+Images
+    Ingen markant påverkan, bilderna innehåller ingen information mer än att visa hur fin hamnen är.
+Information
+    Ordningen och vad som är rubriker är korrekt och logisk (site topography)
+
+
+
+Fel:
+    De enda fel jag får från AChecker och wave.webaim.org är att det saknas labels på vissa element i contact.html:
+        Jag har i första hand använt placeholdertext på text/textarea-element, tex. "skäl till att du kontaktar oss", vilket i mina ögon syftar till att ersätta en label. I andra fall föregås fälten av en paragraf som syftar till att förtydliga det som följer.
+        Söker man runt lite på internet går det fort att hitta delade meningar kring detta, konsensus verkar vara att "vissa" skärmläsare inte läser upp placeholder-texten vilket innebär att man bör använda labels. Men det verkar också finnas en handfull olika workarounds kring detta, se till exempel det som nämns på https://www.nngroup.com/articles/form-design-placeholders/.
+
+
+Korrigeringar:
+    La till selectorn ".nav li a:focus" på rad 112 i style.css för att uppfylla krav på att tab triggar grå markering på aktivt element i navbaren.
+
+
+
+Frågor att ta ställning till
+Välj ut den riktlinje som du anser vara den viktigaste att följa. Argumentera för varför du anser den vara viktigast.
+    1.1 Textalternativ: Tillhandahåll alternativ i form av text till allt icke-textbaserat innehåll
+        
+        Detta är i mina ögon den viktigaste riktlinjen, då den i princip utgör grund för samtliga efterföljande riktlinjer.
+        Kan man inte tillgodogöra sig innehållet på en sida så blir användbarheten lika med noll, och därmed förlorar sidan sitt syfte för en given användare.
+
+        Jämför vi med till exempel studiemetoder så hittar man där en uppsjö olika metoder för hur man vill och bäst kan tillgodogöra sig information, som garanterat skiljer sig från person till person.
+        Vissa studenter tycker om att använda fysiska böcker och anteckningar, andra digitala sådana, ytterligare andra föredrar videoföreläsningar mot "riktiga" och så vidare.
+        Skillnaden här är att gemene student har ett val, och ofta använder en kombination av metoder, jämfört med en användare eller student med funktionsnedsättning, som mycket väl kan vara begränsad till ett slags media.
+
+        Ska en blind person kunna tillgodogöra sig innehåll på en sida måste det kunna läsas av skärmläsare.
+        Ska en döv person kunna tillgodogöra sig innehåll på en sida så kan den inte bygga på ljudklipp utan transkribering eller videoklipp där det inte framgår vad som sägs genom till exempel textning.
+
+
+
+Finns det tillfällen då det kan vara okej att inte följa riktlinjerna för tillgänglighet? Skriv ned vad du anser och ge exempel för att understödja ditt svar.
+    Om en sida utvecklas för en användargrupp som är tydligt definierad tex. militär, flygpersonal etc. där användarna inte tillåts ha funktionsnedsättningar då de är oförenliga med tjänsten (tex synskador eller färgblindhet för piloter) kan avkall på tillgänglighet definitivt göras.
+
+
+Vad är ett bra sätt att testa om en sajt är användbar och hur skulle du göra för att testa användbarheten för Djupviks sajt? 
+    Ett i mina ögon bra sätt att testa användbarheten på en site är att sätta den i händerna på flera oinvigda personer med olika tekniska kunskaper.
+    Genom att låta tredje part "krocktesta" sidan kan man hitta problem som man som utvecklare inte upptäcker
